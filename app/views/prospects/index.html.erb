@@ -1,0 +1,44 @@
+<h1>Prospects#index</h1>
+<p>Find me in app/views/prospects/index.html.erb</p>
+
+
+<%= form_tag import_prospects_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Importer" %>
+<% end %>
+
+<table>
+  <thead>
+    <th>
+      <th>Siren</th>
+      <th>Siret</th>
+      <th>Type</th>
+      <th>denomination</th>
+      <th>Sigle</th>
+      <th>Nom commercial</th>
+      <th>adresse 1</th>
+      <th>adresse 2</th>
+      <th>adresse 3</th>
+      <th>Code postal</th>
+      <th>Commune</th>
+    </th>
+  </thead>
+    <tbody>
+      <% @prospects.each do |prospect| %>
+        <tr>
+          <td> <%= prospect.siren %> </td>
+          <td> <%= prospect.siret %> </td>
+          <td> <%= prospect.prosp_type %> </td>
+          <td> <%= prospect.denomination %> </td>
+          <td> <%= prospect.sigle %> </td>
+          <td> <%= prospect.nom_commercial %> </td>
+          <td> <%= prospect.adresse1 %> </td>
+          <td> <%= prospect.adresse2 %> </td>
+          <td> <%= prospect.adresse3 %> </td>
+          <td> <%= prospect.code_postal %> </td>
+          <td> <%= prospect.commune %> </td>
+        </tr>
+    <% end %>
+
+    </tbody>
+</table>
