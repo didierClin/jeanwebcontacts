@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">Siren</Data></Cell>
+        <Cell><Data ss:Type="String">siret</Data></Cell>
+        <Cell><Data ss:Type="String">Type</Data></Cell>
+        <Cell><Data ss:Type="String">Dénomination</Data></Cell>
+        <Cell><Data ss:Type="String">sigle</Data></Cell>
+        <Cell><Data ss:Type="String">Nom commercial</Data></Cell>
+        <Cell><Data ss:Type="String">adresse 1</Data></Cell>
+        <Cell><Data ss:Type="String">adresse 2</Data></Cell>
+        <Cell><Data ss:Type="String">adresse 3</Data></Cell>
+        <Cell><Data ss:Type="Number">Code postal</Data></Cell>
+        <Cell><Data ss:Type="String">Commune</Data></Cell>
+      </Row>
+    <% @prospects.each do |prospect| %>
+      <Row>
+        <Cell><Data ss:Type="String"><%= prospect.siren   %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= prospect.siret %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= prospect.prosp_type %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= prospect.denomination %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= prospect.sigle   %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= prospect.nom_commercial %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= prospect.adresse1 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= prospect.adresse2 %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= prospect.adresse3 %></Data></Cell>
+        <Cell><Data ss:Type="Number"><%= prospect.code_postal %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= prospect.commune %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>

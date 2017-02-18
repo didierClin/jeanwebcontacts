@@ -34,6 +34,8 @@ gem 'bootstrap-sass', '~> 3.3.7'
 # Roo implements read access for all common spreadsheet types
 gem "roo", "~> 2.7.0"
 gem 'roo-xls'
+# Pagination
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
