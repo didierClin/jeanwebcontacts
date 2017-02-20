@@ -1,0 +1,6 @@
+<% if current_user %>
+  <%= link_to 'sortir', destroy_user_session_path,  :method => :delete, class: "btn btn-warning link_black"  %>
+<% else %>
+  <%= link_to "s'authentifier", user_session_path, class: "btn btn-success link_black" %> |
+  <%= link_to "s'inscrire", new_user_registration_path, class: "btn btn-success link_black" %>
+<% end %>
